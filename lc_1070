@@ -1,0 +1,7 @@
+# Write your MySQL query statement below
+SELECT a.product_id , b.year as first_year , b.quantity , b.price
+FROM (
+SELECT product_id , MIN(year) as year
+FROM Sales
+GROUP BY product_id   ) a
+NATURAL JOIN Sales b
